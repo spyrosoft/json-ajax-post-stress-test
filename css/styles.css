@@ -1,0 +1,43 @@
+/* ---------- Form Colors & Margin ---------- */
+body, input[type="text"], input[type="email"], button, .button {
+  background-color: #000000; }
+
+input[type="text"]:focus, input[type="email"]:focus {
+  background-color: #FFFFFF;
+  color: #000000; }
+
+h1 {
+  color: #FFFFFF; }
+
+button, .button {
+  border: 0.1rem solid #FFFFFF; }
+
+button:hover, .button:hover {
+  background-color: #FFFFFF;
+  color: #000000; }
+
+.switch label {
+  background-color: #000000;
+  border: 0.1rem solid #FFFFFF; }
+
+.switch label:after {
+  width: 1.4rem;
+  height: 1.4rem; }
+
+.switch input:checked + label {
+  background-color: #FFFFFF; }
+
+.switch input:checked + label:after {
+  background-color: #000000; }
+
+.invalid {
+  color: #FF0000; }
+
+/* ---------- End Form Colors ---------- */
+/* ---------- Pretty ---------- */
+.standard-margin {
+  margin-bottom: 2rem; }
+
+/* ---------- Pretty ---------- */
+
+/*# sourceMappingURL=styles.css.map */

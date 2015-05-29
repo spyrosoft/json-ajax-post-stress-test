@@ -1,0 +1,52 @@
+$foreground-color: #FFFFFF
+$background-color: #000000
+$thin-border: 0.1rem solid $foreground-color
+$thin-border-inverted: 0.1rem solid $background-color
+$standard-margin: 2rem
+
+/* ---------- Form Colors & Margin ---------- */
+
+body, input[type="text"], input[type="email"], button, .button
+	background-color: $background-color
+
+input[type="text"]:focus, input[type="email"]:focus
+	background-color: $foreground-color
+	color: $background-color
+
+h1
+	color: $foreground-color
+
+button, .button
+	border: $thin-border
+
+button:hover, .button:hover
+	background-color: $foreground-color
+	color: $background-color
+
+.switch label
+	background-color: $background-color
+	border: $thin-border
+
+.switch label:after
+	width: 1.4rem
+	height: 1.4rem
+
+.switch input:checked+label
+	background-color: $foreground-color
+
+.switch input:checked+label:after
+	background-color: $background-color
+
+.invalid
+	color: #FF0000
+
+/* ---------- End Form Colors ---------- */
+
+
+
+/* ---------- Pretty ---------- */
+
+.standard-margin
+	margin-bottom: $standard-margin
+
+/* ---------- Pretty ---------- */
