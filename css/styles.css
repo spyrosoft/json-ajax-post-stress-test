@@ -1,13 +1,20 @@
 /* ---------- Form Colors & Margin ---------- */
-body, input[type="text"], input[type="email"], button, .button {
-  background-color: #000000; }
+body, input[type="text"], input[type="email"], button, .button, textarea {
+  background-color: #000000;
+  color: #FFFFFF; }
 
-input[type="text"]:focus, input[type="email"]:focus {
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background-color: #FFFFFF;
   color: #000000; }
 
-h1 {
+h1, h2, h3, h4, h5, h6, label {
   color: #FFFFFF; }
+
+fieldset legend {
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 0.1rem solid #FFFFFF;
+  padding: 0.2rem 1rem; }
 
 button, .button {
   border: 0.1rem solid #FFFFFF; }
@@ -35,9 +42,17 @@ button:hover, .button:hover {
 
 /* ---------- End Form Colors ---------- */
 /* ---------- Pretty ---------- */
-.standard-margin {
+.standard-margin-bottom {
   margin-bottom: 2rem; }
 
 /* ---------- Pretty ---------- */
+/* ---------- Misc ---------- */
+.display-none {
+  display: none; }
+
+.no-margin {
+  margin: 0; }
+
+/* ---------- Misc ---------- */
 
 /*# sourceMappingURL=styles.css.map */

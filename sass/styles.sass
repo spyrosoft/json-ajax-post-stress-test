@@ -6,15 +6,22 @@ $standard-margin: 2rem
 
 /* ---------- Form Colors & Margin ---------- */
 
-body, input[type="text"], input[type="email"], button, .button
+body, input[type="text"], input[type="email"], button, .button, textarea
 	background-color: $background-color
+	color: $foreground-color
 
-input[type="text"]:focus, input[type="email"]:focus
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus
 	background-color: $foreground-color
 	color: $background-color
 
-h1
+h1, h2, h3, h4, h5, h6, label
 	color: $foreground-color
+
+fieldset legend
+	background-color: $background-color
+	color: $foreground-color
+	border: $thin-border
+	padding: 0.2rem 1rem
 
 button, .button
 	border: $thin-border
@@ -46,7 +53,19 @@ button:hover, .button:hover
 
 /* ---------- Pretty ---------- */
 
-.standard-margin
+.standard-margin-bottom
 	margin-bottom: $standard-margin
 
 /* ---------- Pretty ---------- */
+
+
+
+/* ---------- Misc ---------- */
+
+.display-none
+	display: none
+
+.no-margin
+	margin: 0
+
+/* ---------- Misc ---------- */

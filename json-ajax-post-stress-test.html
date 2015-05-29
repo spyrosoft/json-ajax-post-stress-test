@@ -3,34 +3,117 @@
 <head>
 	<meta charset="utf-8" />
 	<title>AJAX Post - JSON Stress Test</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="./css/normalize.min.css" rel="stylesheet" type="text/css" />
-	<link href="./css/foundation.min.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="./css/normalize.min.css" rel="stylesheet" type="text/css">
+	<link href="./css/foundation.min.css" rel="stylesheet" type="text/css">
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/foundation.min.js"></script>
-	<link href="./css/styles.css" rel="stylesheet" type="text/css" />
+	<link href="./css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="standard-margin"></div>
+	
+	<div class="standard-margin-bottom"></div>
+	
 	<div class="content">
+		
 		<div class="row">
 			<div class="columns">
 				<h1>AJAX Post - JSON Stress Test</h1>
 			</div>
-			<div class="large-6 columns">
-				<input type="text" name="name">
-			</div>
-			<div class="large-6 columns">
-				<input type="email" name="email">
-			</div>
+		</div>
+		
+		<div class="row">
 			<div class="columns">
-				<div class="switch">
-					<input id="example-checkbox-switch" type="checkbox">
-					<label for="example-checkbox-switch"></label>
+				<button class="button begin-button">Begin</button>
+			</div>
+		</div>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>JSON</legend>
+			
+			<div class="display-none" id="json-key-value-input-template">
+				<div class="row">
+					<div class="large-2 medium-2 small-6 columns">
+						<input type="text" class="json-key">
+					</div>
+					<div class="large-1 medium-1 small-6 columns">
+						<h3>:</h3>
+					</div>
+					<div class="large-8 medium-8 columns">
+						<textarea class="json-value"></textarea>
+					</div>
+					<div class="large-1 medium-1 columns">
+						<button class="tiny remove-json-key-value-button">x</button>
+					</div>
+				</div>
+				
+				<div id="json-key-value-input">
+					
+				</div>
+				
+			</div>
+			
+			<button class="no-margin">+</button>
+			
+		</fieldset>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>Settings</legend>
+			
+			<div class="columns">
+				<div class="row">
+					
+					<div class="large-1 medium-1 small-1 columns">
+						<div class="switch">
+							<input id="stress-interval-checkbox-switch" type="checkbox" checked="checked">
+							<label for="stress-interval-checkbox-switch"></label>
+						</div>
+					</div>
+					
+					<div class="large-11 medium-11 small-11 columns">
+						<label for="stress-interval-checkbox-switch"><h5>Enable Millisecond Stress Interval</h5></label>
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					<div class="large-6 medium-6 columns">
+						<label for="stress-interval-in-milliseconds">Millisecond Interval</label>
+						<input type="text" id="stress-interval-in-milliseconds" value="400">
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="large-6 medium-6 columns">
+						<label for="number-of-stress-test-calls">Number of Stress Test Calls</label>
+						<input type="text" id="number-of-stress-test-calls" value="4">
+					</div>
 				</div>
 			</div>
+			
+		</fieldset>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>Iteration Variables</legend>
+			
+			<div class="large-6 medium-6 columns">
+				<label for="iteration-variables">Variable</label>
+				<input type="text" id="iteration-variables">
+			</div>
+			<div class="large-2 medium-2 columns">
+				<label for="iteration-operator">Operator</label>
+				<input type="text" id="iteration-operator">
+			</div>
+			<div class="large-4 medium-4 columns">
+				<label for="iteration-step-by">Step By</label>
+				<input type="text" id="iteration-step-by">
+			</div>
+			
+		</fieldset>
+		
+		<div class="row">
 			<div class="columns">
-				<button class="button">Begin</button>
+				<button class="button begin-button">Begin</button>
 			</div>
 		</div>
 	</div>
