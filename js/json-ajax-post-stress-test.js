@@ -1,13 +1,23 @@
+var days_for_cookies_to_live = 10;
+
 $(document).ready(
 	function() {
-		$( '#add-json-key-value-input-button' ).click( add_json_key_value_input );
-		$( '#generate-json-from-key-value-input-button' ).click( generate_json_from_key_value_input )
-		$( '.begin-button' ).click( begin_stress_test )
-		$( 'fieldset legend' ).click( toggle_fieldset_content )
+		set_event_handlers();
 		add_json_key_value_input();
-		restore_json_from_previous_session();
+		restore_settings_from_previous_session();
 	}
 );
+
+function set_event_handlers()
+{
+	$( '#add-json-key-value-input-button' ).click( add_json_key_value_input );
+	$( '#generate-json-from-key-value-input-button' ).click( generate_json_from_key_value_input );
+	$( '#url-to-post-to' ).blur( store_url_cookie );
+	$( '#json-input' ).change( store_url_cookie );
+	$( '#json-input' ).blur( store_url_cookie );
+	$( '.begin-button' ).click( begin_stress_test );
+	$( 'fieldset legend' ).click( toggle_fieldset_content );
+}
 
 function add_json_key_value_input()
 {
@@ -127,6 +137,14 @@ function begin_stress_test()
 		return;
 	}
 	
+	var number_of_stress_test_calls = $( '#number-of-stress-test-calls' ).val();
+	
+	if ( number_of_stress_test_calls != parseInt( number_of_stress_test_calls ) )
+	{
+		alert( "The Settings > Number of Stress Test Calls field needs to be an integer." );
+		return;
+	}
+	
 	
 }
 
@@ -174,13 +192,29 @@ function validate_iteration_key_variable( json_input )
 	return errors;
 }
 
-function restore_json_from_previous_session()
+function restore_settings_from_previous_session()
 {
 	var stored_json_input = read_cookie( 'stored_json_input' );
 	if ( stored_json_input )
 	{
 		$( '#json-input' ).val( stored_json_input );
 	}
+	
+	var stored_url = read_cookie( 'stored_url' );
+	if ( stored_url )
+	{
+		$( '#url-to-post-to' ).val( stored_url );
+	}
+}
+
+function store_url_cookie()
+{
+	var url_to_post_to = $( '#url-to-post-to' ).val();
+	if ( url_to_post_to == '' )
+	{
+		return;
+	}
+	create_cookie( 'stored_url', url_to_post_to, days_for_cookies_to_live );
 }
 
 

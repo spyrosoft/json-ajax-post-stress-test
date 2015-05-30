@@ -17,24 +17,100 @@
 	
 	<div class="content">
 		
-		<div class="row">
+		<div class="row standard-margin-bottom">
 			<div class="columns">
 				<h1>AJAX Post - JSON Stress Test</h1>
 			</div>
 		</div>
 		
-		<div class="row">
-			<div class="columns">
-				<button class="button begin-button">Begin</button>
-			</div>
-		</div>
-		
 		<fieldset class="row standard-margin-bottom">
-			<legend>JSON</legend>
+			<legend>Settings</legend>
 			
 			<div class="fieldset-content">
 				
-				<label class="half-standard-margin-bottom">JSON Key Value Pairs <small>(optional)</small>:</label>
+				<div class="row">
+					
+					<div class="columns">
+						<label for="url-to-post-to">URL:</label>
+						<input type="text" id="url-to-post-to">
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="columns">
+						<label for="json-input">JSON:</label>
+						<textarea id="json-input"></textarea>
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					<div class="large-6 medium-6 columns">
+						
+						<div class="row">
+							<div class="columns">
+								<label for="stress-interval-in-milliseconds">Millisecond Interval</label>
+								<input type="text" id="stress-interval-in-milliseconds" value="400">
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-2 medium-3 small-1 columns">
+								<div class="switch">
+									<input id="stress-interval-checkbox-switch" type="checkbox" checked="checked">
+									<label for="stress-interval-checkbox-switch"></label>
+								</div>
+							</div>
+							
+							<div class="large-10 medium-9 small-11 columns">
+								<label for="stress-interval-checkbox-switch"><h5>Enable Millisecond Stress Interval</h5></label>
+							</div>
+						</div>
+						
+					</div>
+					<div class="large-6 medium-6 columns">
+						<label for="number-of-stress-test-calls">Number of Stress Test Calls</label>
+						<input type="text" id="number-of-stress-test-calls" value="4">
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</fieldset>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>Iteration Key Variable</legend>
+			
+			<div class="fieldset-content">
+
+				<div class="row">
+					<div class="large-6 medium-6 columns">
+						<label for="iteration-key-variables">Key Variable</label>
+						<input type="text" id="iteration-key-variables">
+					</div>
+					<div class="large-2 medium-2 columns">
+						<label for="iteration-operator">Operator</label>
+						<input type="text" id="iteration-operator">
+					</div>
+					<div class="large-4 medium-4 columns">
+						<label for="iteration-step-by">Step By</label>
+						<input type="text" id="iteration-step-by">
+					</div>
+				</div>
+				
+			</div>
+			
+		</fieldset>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>JSON Builder <small>(Optional)</small></legend>
+			
+			<div class="fieldset-content display-none">
+				
+				<label class="half-standard-margin-bottom">JSON Key Value Pairs:</label>
 				
 				<div class="display-none" id="json-key-value-input-template">
 					<div class="row">
@@ -64,77 +140,13 @@
 					</div>
 				</div>
 				
-				<label for="json-input">JSON:</label>
-				<textarea class="no-margin" id="json-input"></textarea>
-				
 			</div>
 
 		</fieldset>
 		
-		<fieldset class="row standard-margin-bottom">
-			<legend>Settings</legend>
-			
-			<div class="fieldset-content">
-				
-				<div class="row">
-					
-					<div class="large-1 medium-1 small-1 columns">
-						<div class="switch">
-							<input id="stress-interval-checkbox-switch" type="checkbox" checked="checked">
-							<label for="stress-interval-checkbox-switch"></label>
-						</div>
-					</div>
-					
-					<div class="large-11 medium-11 small-11 columns">
-						<label for="stress-interval-checkbox-switch"><h5>Enable Millisecond Stress Interval</h5></label>
-					</div>
-					
-				</div>
-				
-				<div class="row">
-					<div class="large-6 medium-6 columns">
-						<label for="stress-interval-in-milliseconds">Millisecond Interval</label>
-						<input type="text" id="stress-interval-in-milliseconds" value="400">
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="large-6 medium-6 columns">
-						<label for="number-of-stress-test-calls">Number of Stress Test Calls</label>
-						<input type="text" id="number-of-stress-test-calls" value="4">
-					</div>
-				</div>
-			</div>
-			
-		</fieldset>
-		
-		<fieldset class="row standard-margin-bottom">
-			<legend>Iteration Key Variable</legend>
-			
-			<div class="fieldset-content">
-
-				<div class="row">
-					<div class="large-6 medium-6 columns">
-						<label for="iteration-key-variables">Key Variable</label>
-						<input type="text" id="iteration-key-variables">
-					</div>
-					<div class="large-2 medium-2 columns">
-						<label for="iteration-operator">Operator</label>
-						<input type="text" id="iteration-operator">
-					</div>
-					<div class="large-4 medium-4 columns">
-						<label for="iteration-step-by">Step By</label>
-						<input type="text" id="iteration-step-by">
-					</div>
-				</div>
-				
-			</div>
-			
-		</fieldset>
-		
-		<div class="row standard-margin-bottom">
-			<div class="columns">
-				<button class="button begin-button">Begin</button>
+		<div class="row">
+			<div class="columns text-center">
+				<button class="large button begin-button">Begin</button>
 			</div>
 		</div>
 		
