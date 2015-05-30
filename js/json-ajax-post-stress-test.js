@@ -1,5 +1,10 @@
 var days_for_cookies_to_live = 10;
 
+var json_input;
+var stress_test_call_limit;
+var stress_test_call_counter;
+var stress_test_call_timeout;
+
 $(document).ready(
 	function() {
 		set_event_handlers();
@@ -127,7 +132,7 @@ function begin_stress_test()
 		return;
 	}
 	
-	var json_input = JSON.parse( $( '#json-input' ).val() );
+	json_input = JSON.parse( $( '#json-input' ).val() );
 	
 	var iteration_key_variable_errors = validate_iteration_key_variable( json_input );
 	
@@ -144,8 +149,16 @@ function begin_stress_test()
 		alert( "The Settings > Number of Stress Test Calls field needs to be an integer." );
 		return;
 	}
-	
-	
+
+	if ( $( '#stress-interval-checkbox-switch' ).checked )
+	{
+		stress_test_call_limit = number_of_stress_test_calls;
+		run_stress_test_with_millisecond_interval();
+	}
+	else
+	{
+		run_stress_test_without_millisecond_interval( number_of_stress_test_calls );
+	}
 }
 
 function validate_input_json()
@@ -190,6 +203,51 @@ function validate_iteration_key_variable( json_input )
 	}
 	
 	return errors;
+}
+
+function run_stress_test_with_millisecond_interval()
+{
+	
+}
+
+function run_stress_test_without_millisecond_interval( number_of_stress_test_calls )
+{
+	for (
+		stress_test_call_counter = 1;
+		stress_test_call_counter <= number_of_stress_test_calls;
+		stress_test_call_counter++
+	) {
+		post_json_input_to_url( stress_test_call_counter );
+	}
+}
+
+function post_json_input_to_url( call_number )
+{
+	var url_to_post_to = $( '#url-to-post-to' ).val();
+	$.post( url_to_post_to, json_input )
+		.done( function() { add_success_result_to_report( call_number ); } )
+		.fail( function() { add_failed_result_to_report( call_number ); } );
+}
+
+function operate_on_json_key_variable()
+{
+	json_input[ $( '#iteration-key-variables' ).val() ] = eval( "json_input[ $( '#iteration-key-variables' ).val() ]" + $( '#iteration-operator' ).val() + $( '#iteration-step-by' ).val() );
+}
+
+function add_success_result_to_report( call_number )
+{
+	$( '#report-result-template .success-or-failure-circle' ).removeClass( 'result-failure' );
+	$( '#report-result-template .success-or-failure-circle' ).addClass( 'result-success' );
+	$( '#report-result-template .success-or-failure-circle' ).html( call_number );
+	$( '#report-results' ).append( $( '#report-result-template' ).html() );
+}
+
+function add_success_result_to_report( call_number )
+{
+	$( '#report-result-template .success-or-failure-circle' ).removeClass( 'result-success' );
+	$( '#report-result-template .success-or-failure-circle' ).addClass( 'result-failure' );
+	$( '#report-result-template .success-or-failure-circle' ).html( call_number );
+	$( '#report-results' ).append( $( '#report-result-template' ).html() );
 }
 
 function restore_settings_from_previous_session()

@@ -48,6 +48,18 @@ button:hover, .button:hover, button:focus, .button:focus {
 .half-standard-margin-bottom {
   margin-bottom: 1rem; }
 
+.result-success {
+  background-color: #00FF00; }
+
+.result-failure {
+  background-color: #FF0000; }
+
+.success-or-failure-circle {
+  display: inline-block;
+  color: #000000;
+  border-radius: 2rem;
+  padding: 1rem; }
+
 /* ---------- Pretty ---------- */
 /* ---------- Fielset Collapsing ---------- */
 fieldset legend {

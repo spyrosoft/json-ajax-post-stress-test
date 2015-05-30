@@ -1,9 +1,15 @@
 $foreground-color: #FFFFFF
 $background-color: #000000
+
 $thin-border: 0.1rem solid $foreground-color
 $thin-border-inverted: 0.1rem solid $background-color
+
 $standard-margin: 2rem
 $half-standard-margin: 1rem
+
+$success-color: #00FF00
+$failure-color: #FF0000
+
 
 /* ---------- Form Colors & Spacing ---------- */
 
@@ -59,6 +65,18 @@ button:hover, .button:hover, button:focus, .button:focus
 
 .half-standard-margin-bottom
 	margin-bottom: $half-standard-margin
+
+.result-success
+	background-color: $success-color
+
+.result-failure
+	background-color: $failure-color
+
+.success-or-failure-circle
+	display: inline-block
+	color: $background-color
+	border-radius: $standard-margin
+	padding: $half-standard-margin
 
 /* ---------- Pretty ---------- */
 
