@@ -152,6 +152,7 @@ function begin_stress_test()
 
 	if ( $( '#stress-interval-checkbox-switch' ).checked )
 	{
+		stress_test_call_counter = 1;
 		stress_test_call_limit = number_of_stress_test_calls;
 		run_stress_test_with_millisecond_interval();
 	}
@@ -207,7 +208,12 @@ function validate_iteration_key_variable( json_input )
 
 function run_stress_test_with_millisecond_interval()
 {
-	
+	post_json_input_to_url( stress_test_call_counter );
+	if ( stress_test_call_counter < stress_test_call_limit )
+	{
+		stress_test_call_timeout = setTimeout( 'run_stress_test_with_millisecond_interval();', $( '#stress-interval-in-milliseconds' ).val() );
+	}
+	stress_test_call_counter++;
 }
 
 function run_stress_test_without_millisecond_interval( number_of_stress_test_calls )
