@@ -32,45 +32,50 @@
 		<fieldset class="row standard-margin-bottom">
 			<legend>JSON</legend>
 			
-			<label class="half-standard-margin-bottom">JSON Key Value Pairs <small>(optional)</small>:</label>
-			
-			<div class="display-none" id="json-key-value-input-template">
+			<div class="fieldset-content">
+				
+				<label class="half-standard-margin-bottom">JSON Key Value Pairs <small>(optional)</small>:</label>
+				
+				<div class="display-none" id="json-key-value-input-template">
+					<div class="row">
+						<div class="large-4 medium-4 small-6 columns">
+							<input type="text" class="json-key">
+						</div>
+						<div class="large-1 medium-1 small-6 columns">
+							<h3>:</h3>
+						</div>
+						<div class="large-6 medium-6 columns">
+							<textarea class="json-value" rows="4"></textarea>
+						</div>
+						<div class="large-1 medium-1 columns">
+							<button class="tiny remove-json-key-value-button">&#215;</button>
+						</div>
+					</div>
+				</div>
+				
+				<div id="json-key-value-input"></div>
+				
 				<div class="row">
-					<div class="large-4 medium-4 small-6 columns">
-						<input type="text" class="json-key">
-					</div>
-					<div class="large-1 medium-1 small-6 columns">
-						<h3>:</h3>
-					</div>
 					<div class="large-6 medium-6 columns">
-						<textarea class="json-value" rows="4"></textarea>
+						<button id="generate-json-from-key-value-input-button">Generate JSON</button>
 					</div>
-					<div class="large-1 medium-1 columns">
-						<button class="tiny remove-json-key-value-button">&#215;</button>
+					<div class="large-6 medium-6 columns text-right">
+						<button class="tiny" id="add-json-key-value-input-button">+</button>
 					</div>
 				</div>
+				
+				<label for="json-input">JSON:</label>
+				<textarea class="no-margin" id="json-input"></textarea>
+				
 			</div>
-			
-			<div id="json-key-value-input"></div>
-			
-			<div class="row">
-				<div class="large-6 medium-6 columns">
-					<button id="generate-json-from-key-value-input-button">Generate JSON</button>
-				</div>
-				<div class="large-6 medium-6 columns text-right">
-					<button class="tiny" id="add-json-key-value-input-button">+</button>
-				</div>
-			</div>
-			
-			<label for="json-to-post">JSON:</label>
-			<textarea class="no-margin" id="json-to-post"></textarea>
-			
+
 		</fieldset>
 		
 		<fieldset class="row standard-margin-bottom">
 			<legend>Settings</legend>
 			
-			<div class="columns">
+			<div class="fieldset-content">
+				
 				<div class="row">
 					
 					<div class="large-1 medium-1 small-1 columns">
@@ -104,28 +109,48 @@
 		</fieldset>
 		
 		<fieldset class="row standard-margin-bottom">
-			<legend>Iteration Key Variables</legend>
+			<legend>Iteration Key Variable</legend>
 			
-			<div class="large-6 medium-6 columns">
-				<label for="iteration-key-variables">Variable</label>
-				<input type="text" id="iteration-key-variables">
-			</div>
-			<div class="large-2 medium-2 columns">
-				<label for="iteration-operator">Operator</label>
-				<input type="text" id="iteration-operator">
-			</div>
-			<div class="large-4 medium-4 columns">
-				<label for="iteration-step-by">Step By</label>
-				<input type="text" id="iteration-step-by">
+			<div class="fieldset-content">
+
+				<div class="row">
+					<div class="large-6 medium-6 columns">
+						<label for="iteration-key-variables">Key Variable</label>
+						<input type="text" id="iteration-key-variables">
+					</div>
+					<div class="large-2 medium-2 columns">
+						<label for="iteration-operator">Operator</label>
+						<input type="text" id="iteration-operator">
+					</div>
+					<div class="large-4 medium-4 columns">
+						<label for="iteration-step-by">Step By</label>
+						<input type="text" id="iteration-step-by">
+					</div>
+				</div>
+				
 			</div>
 			
 		</fieldset>
 		
-		<div class="row">
+		<div class="row standard-margin-bottom">
 			<div class="columns">
 				<button class="button begin-button">Begin</button>
 			</div>
 		</div>
+		
+		<fieldset class="row standard-margin-bottom">
+			<legend>Report</legend>
+			
+			<div class="fieldset-content">
+				
+				<div class="display-none" id="report-result-template">
+					<div class="large-2 medium-2 columns success-or-failure"></div>
+				</div>
+				
+			</div>
+			
+		</fieldset>
+			
 	</div>
 	<script>$(document).foundation();</script>
 </body>

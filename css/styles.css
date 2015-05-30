@@ -1,4 +1,4 @@
-/* ---------- Form Colors & Margin ---------- */
+/* ---------- Form Colors & Spacing ---------- */
 body, input[type="text"], input[type="email"], button, .button, textarea {
   background-color: #000000;
   color: #FFFFFF; }
@@ -40,7 +40,7 @@ button:hover, .button:hover, button:focus, .button:focus {
 .invalid {
   color: #FF0000; }
 
-/* ---------- End Form Colors ---------- */
+/* ---------- End Form Colors & Spacing ---------- */
 /* ---------- Pretty ---------- */
 .standard-margin-bottom {
   margin-bottom: 2rem; }
@@ -49,6 +49,11 @@ button:hover, .button:hover, button:focus, .button:focus {
   margin-bottom: 1rem; }
 
 /* ---------- Pretty ---------- */
+/* ---------- Fielset Collapsing ---------- */
+fieldset legend {
+  cursor: pointer; }
+
+/* ---------- End Fielset Collapsing ---------- */
 /* ---------- Misc ---------- */
 .display-none {
   display: none; }
