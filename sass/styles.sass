@@ -3,6 +3,7 @@ $background-color: #000000
 $thin-border: 0.1rem solid $foreground-color
 $thin-border-inverted: 0.1rem solid $background-color
 $standard-margin: 2rem
+$half-standard-margin: 1rem
 
 /* ---------- Form Colors & Margin ---------- */
 
@@ -14,7 +15,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus
 	background-color: $foreground-color
 	color: $background-color
 
-h1, h2, h3, h4, h5, h6, label
+h1, h2, h3, h4, h5, h6, label, label small
 	color: $foreground-color
 
 fieldset legend
@@ -26,7 +27,7 @@ fieldset legend
 button, .button
 	border: $thin-border
 
-button:hover, .button:hover
+button:hover, .button:hover, button:focus, .button:focus
 	background-color: $foreground-color
 	color: $background-color
 
@@ -55,6 +56,9 @@ button:hover, .button:hover
 
 .standard-margin-bottom
 	margin-bottom: $standard-margin
+
+.half-standard-margin-bottom
+	margin-bottom: $half-standard-margin
 
 /* ---------- Pretty ---------- */
 

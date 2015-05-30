@@ -9,6 +9,7 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/foundation.min.js"></script>
 	<link href="./css/styles.css" rel="stylesheet" type="text/css">
+	<script src="./js/json-ajax-post-stress-test.js"></script>
 </head>
 <body>
 	
@@ -31,29 +32,38 @@
 		<fieldset class="row standard-margin-bottom">
 			<legend>JSON</legend>
 			
+			<label class="half-standard-margin-bottom">JSON Key Value Pairs <small>(optional)</small>:</label>
+			
 			<div class="display-none" id="json-key-value-input-template">
 				<div class="row">
-					<div class="large-2 medium-2 small-6 columns">
+					<div class="large-4 medium-4 small-6 columns">
 						<input type="text" class="json-key">
 					</div>
 					<div class="large-1 medium-1 small-6 columns">
 						<h3>:</h3>
 					</div>
-					<div class="large-8 medium-8 columns">
-						<textarea class="json-value"></textarea>
+					<div class="large-6 medium-6 columns">
+						<textarea class="json-value" rows="4"></textarea>
 					</div>
 					<div class="large-1 medium-1 columns">
-						<button class="tiny remove-json-key-value-button">x</button>
+						<button class="tiny remove-json-key-value-button">&#215;</button>
 					</div>
 				</div>
-				
-				<div id="json-key-value-input">
-					
-				</div>
-				
 			</div>
 			
-			<button class="no-margin">+</button>
+			<div id="json-key-value-input"></div>
+			
+			<div class="row">
+				<div class="large-6 medium-6 columns">
+					<button id="generate-json-from-key-value-input-button">Generate JSON</button>
+				</div>
+				<div class="large-6 medium-6 columns text-right">
+					<button class="tiny" id="add-json-key-value-input-button">+</button>
+				</div>
+			</div>
+			
+			<label for="json-to-post">JSON:</label>
+			<textarea class="no-margin" id="json-to-post"></textarea>
 			
 		</fieldset>
 		
@@ -94,11 +104,11 @@
 		</fieldset>
 		
 		<fieldset class="row standard-margin-bottom">
-			<legend>Iteration Variables</legend>
+			<legend>Iteration Key Variables</legend>
 			
 			<div class="large-6 medium-6 columns">
-				<label for="iteration-variables">Variable</label>
-				<input type="text" id="iteration-variables">
+				<label for="iteration-key-variables">Variable</label>
+				<input type="text" id="iteration-key-variables">
 			</div>
 			<div class="large-2 medium-2 columns">
 				<label for="iteration-operator">Operator</label>
