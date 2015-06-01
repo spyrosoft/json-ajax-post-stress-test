@@ -17,9 +17,12 @@ function set_event_handlers()
 {
 	$( '#add-json-key-value-input-button' ).click( add_json_key_value_input );
 	$( '#generate-json-from-key-value-input-button' ).click( generate_json_from_key_value_input );
+	$( '#url-to-post-to' ).change( store_url_cookie );
 	$( '#url-to-post-to' ).blur( store_url_cookie );
-	$( '#json-input' ).change( store_url_cookie );
-	$( '#json-input' ).blur( store_url_cookie );
+	$( '#json-input-post-variable' ).change( store_post_variable_cookie );
+	$( '#json-input-post-variable' ).blur( store_post_variable_cookie );
+	$( '#json-input' ).change( store_json_input_cookie );
+	$( '#json-input' ).blur( store_json_input_cookie );
 	$( '.begin-button' ).click( begin_stress_test );
 	$( 'fieldset legend' ).click( toggle_fieldset_content );
 }
