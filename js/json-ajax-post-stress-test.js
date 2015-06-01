@@ -283,7 +283,7 @@ function restore_settings_from_previous_session()
 	var stored_post_variable = read_cookie( 'stored_post_variable' );
 	if ( stored_post_variable )
 	{
-		$( '#input-json-post-variable' ).val( stored_post_variable );
+		$( '#json-input-post-variable' ).val( stored_post_variable );
 	}
 	
 	var stored_json_input = read_cookie( 'stored_json_input' );
