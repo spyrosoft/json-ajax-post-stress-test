@@ -271,16 +271,22 @@ function add_failed_result_to_report( call_number )
 
 function restore_settings_from_previous_session()
 {
-	var stored_json_input = read_cookie( 'stored_json_input' );
-	if ( stored_json_input )
-	{
-		$( '#json-input' ).val( stored_json_input );
-	}
-	
 	var stored_url = read_cookie( 'stored_url' );
 	if ( stored_url )
 	{
 		$( '#url-to-post-to' ).val( stored_url );
+	}
+	
+	var stored_post_variable = read_cookie( 'stored_post_variable' );
+	if ( stored_post_variable )
+	{
+		$( '#input-json-post-variable' ).val( stored_post_variable );
+	}
+	
+	var stored_json_input = read_cookie( 'stored_json_input' );
+	if ( stored_json_input )
+	{
+		$( '#json-input' ).val( stored_json_input );
 	}
 }
 
@@ -292,6 +298,26 @@ function store_url_cookie()
 		return;
 	}
 	create_cookie( 'stored_url', url_to_post_to, days_for_cookies_to_live );
+}
+
+function store_post_variable_cookie()
+{
+	var post_variable = $( '#json-input-post-variable' ).val();
+	if ( post_variable == '' )
+	{
+		return;
+	}
+	create_cookie( 'stored_post_variable', post_variable, days_for_cookies_to_live );
+}
+
+function store_json_input_cookie()
+{
+	var json_input_to_store = $( '#json-input' ).val();
+	if ( json_input_to_store == '' )
+	{
+		return;
+	}
+	create_cookie( 'stored_json_input', json_input_to_store, days_for_cookies_to_live );
 }
 
 
