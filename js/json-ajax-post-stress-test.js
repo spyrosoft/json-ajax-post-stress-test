@@ -153,7 +153,7 @@ function begin_stress_test()
 		return;
 	}
 
-	if ( $( '#stress-interval-checkbox-switch' ).checked )
+	if ( $( '#stress-interval-checkbox-switch' )[ 0 ].checked )
 	{
 		stress_test_call_counter = 1;
 		stress_test_call_limit = number_of_stress_test_calls;
