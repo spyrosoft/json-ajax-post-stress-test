@@ -57,8 +57,9 @@ button:hover, .button:hover, button:focus, .button:focus {
 .success-or-failure-circle {
   display: inline-block;
   color: #000000;
-  border-radius: 2rem;
-  padding: 1rem; }
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  font-size: 400%; }
 
 /* ---------- Pretty ---------- */
 /* ---------- Fielset Collapsing ---------- */
