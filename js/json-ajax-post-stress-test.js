@@ -183,14 +183,14 @@ function validate_iteration_key_variable( json_input )
 	var errors = new Array;
 	
 	if (
-		$( '#iteration-key-variables' ).val() == ""
+		$( '#iteration-key-variable' ).val() == ""
 		&& $( '#iteration-operator' ).val() == ""
 		&& $( '#iteration-step-by' ).val() == ""
 	) {
 		return errors;
 	}
 	
-	if ( !json_input[ $( '#iteration-key-variables' ).val() ] )
+	if ( !json_input[ $( '#iteration-key-variable' ).val() ] )
 	{
 		errors.push( 'No Key Variable exists with the specified Iteration Key Variable name.' );
 	}
@@ -216,6 +216,7 @@ function run_stress_test_with_millisecond_interval()
 	{
 		stress_test_call_timeout = setTimeout( 'run_stress_test_with_millisecond_interval();', $( '#stress-interval-in-milliseconds' ).val() );
 	}
+	operate_on_json_key_variable();
 	stress_test_call_counter++;
 }
 
@@ -227,6 +228,7 @@ function run_stress_test_without_millisecond_interval( number_of_stress_test_cal
 		stress_test_call_counter++
 	) {
 		post_json_input_to_url( stress_test_call_counter );
+		operate_on_json_key_variable();
 	}
 }
 
@@ -253,7 +255,8 @@ function post_json_input_to_url( call_number )
 
 function operate_on_json_key_variable()
 {
-	json_input[ $( '#iteration-key-variables' ).val() ] = eval( "json_input[ $( '#iteration-key-variables' ).val() ]" + $( '#iteration-operator' ).val() + $( '#iteration-step-by' ).val() );
+	var iteration_key_variable = $( '#iteration-key-variable' ).val();
+	json_input[ iteration_key_variable ] = eval( "json_input[ iteration_key_variable ]" + $( '#iteration-operator' ).val() + $( '#iteration-step-by' ).val() );
 }
 
 function add_success_result_to_report( call_number )
