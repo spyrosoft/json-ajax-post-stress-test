@@ -201,7 +201,7 @@ function validate_iteration_key_variable( json_input )
 		errors.push( 'Please choose one of the available operators for the Iteration Key Variable > Operator field: ' + available_operators.join( ' ' ) + '.' );
 	}
 	
-	if ( isNaN( $( '#iteration-step-by' ) ) )
+	if ( isNaN( $( '#iteration-step-by' ).val() ) )
 	{
 		errors.push( 'Please use a number for the Iteration Key Variable > Step By field' );
 	}
