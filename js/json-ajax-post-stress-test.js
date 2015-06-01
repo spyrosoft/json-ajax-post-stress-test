@@ -230,7 +230,20 @@ function run_stress_test_without_millisecond_interval( number_of_stress_test_cal
 function post_json_input_to_url( call_number )
 {
 	var url_to_post_to = $( '#url-to-post-to' ).val();
-	$.post( url_to_post_to, json_input )
+	var json_to_post;
+	var post_variable = $( '#json-input-post-variable' ).val();
+	
+	if ( post_variable == "" )
+	{
+		json_to_post = json_input;
+	}
+	else
+	{
+		json_to_post = new Object;
+		json_to_post[ post_variable ] = JSON.stringify( json_input );
+	}
+	
+	$.post( url_to_post_to, json_to_post )
 		.done( function() { add_success_result_to_report( call_number ); } )
 		.fail( function() { add_failed_result_to_report( call_number ); } );
 }
