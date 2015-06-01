@@ -4,8 +4,8 @@ $background-color: #000000
 $thin-border: 0.1rem solid $foreground-color
 $thin-border-inverted: 0.1rem solid $background-color
 
-$standard-margin: 2rem
-$half-standard-margin: 1rem
+$standard-spacing: 2rem
+$half-standard-spacing: 1rem
 
 $success-color: #00FF00
 $failure-color: #FF0000
@@ -61,10 +61,10 @@ button:hover, .button:hover, button:focus, .button:focus
 /* ---------- Pretty ---------- */
 
 .standard-margin-bottom
-	margin-bottom: $standard-margin
+	margin-bottom: $standard-spacing
 
 .half-standard-margin-bottom
-	margin-bottom: $half-standard-margin
+	margin-bottom: $half-standard-spacing
 
 .result-success
 	background-color: $success-color
@@ -75,8 +75,10 @@ button:hover, .button:hover, button:focus, .button:focus
 .success-or-failure-circle
 	display: inline-block
 	color: $background-color
-	border-radius: $half-standard-margin
-	padding: $half-standard-margin $standard-margin
+	border-radius: $half-standard-spacing
+	padding: $half-standard-spacing $standard-spacing
+	margin-bottom: $half-standard-spacing
+	margin-right: $half-standard-spacing
 	font-size: 400%
 
 /* ---------- Pretty ---------- */

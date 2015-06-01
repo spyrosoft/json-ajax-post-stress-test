@@ -212,11 +212,11 @@ function validate_iteration_key_variable( json_input )
 function run_stress_test_with_millisecond_interval()
 {
 	post_json_input_to_url( stress_test_call_counter );
+	operate_on_json_key_variable();
 	if ( stress_test_call_counter < stress_test_call_limit )
 	{
 		stress_test_call_timeout = setTimeout( 'run_stress_test_with_millisecond_interval();', $( '#stress-interval-in-milliseconds' ).val() );
 	}
-	operate_on_json_key_variable();
 	stress_test_call_counter++;
 }
 
