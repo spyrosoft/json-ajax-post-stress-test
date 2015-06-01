@@ -124,7 +124,7 @@ function get_parsed_javascript_value( value_to_parse )
 
 function begin_stress_test()
 {
-	$( '#report' ).html( "" );
+	$( '#report-results' ).html( "" );
 	
 	if ( !validate_input_json() )
 	{
@@ -261,7 +261,7 @@ function add_success_result_to_report( call_number )
 	$( '#report-results' ).append( $( '#report-result-template' ).html() );
 }
 
-function add_success_result_to_report( call_number )
+function add_failed_result_to_report( call_number )
 {
 	$( '#report-result-template .success-or-failure-circle' ).removeClass( 'result-success' );
 	$( '#report-result-template .success-or-failure-circle' ).addClass( 'result-failure' );
